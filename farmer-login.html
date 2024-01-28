@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        .navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-form {
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #f2f2f2;
+            text-align: center;
+            animation: fadeInDown 1s;
+        }
+
+        .login-form h1 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group .error-message {
+            color: red;
+            font-size: 14px;
+        }
+
+        .form-group .success-message {
+            color: green;
+            font-size: 14px;
+        }
+
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+  <a href="home.html" style="color: white;padding-bottom:10px; padding-top: 30px;" >Home</a>
+ <h1 style="color: white;padding-right:65px;text-align: center">FARMER login</h1>
+</div>
+    <div class="container">
+        <div class="login-form">
+            <h1 class="animate__animated animate__fadeInDown">Login here!</h1>
+            <form id="loginForm"  action="display.php" method="get">
+                <div class="form-group">
+                    <label for="user_id">USER ID:</label>
+                    <input type="tel" id="user_id" name="user_id" placeholder="Enter your mobile number" required>
+                    <div class="error-message" id="mobileError"></div>
+                </div>
+                <div class="form-group">
+                    <button type="button" id="verifyButton">Send OTP</button>
+                </div>
+                <div class="form-group">
+                    <label for="otp">Enter OTP:</label>
+                    <input type="text" id="otp" name="otp" placeholder="Enter the OTP received" required>
+                    <div class="error-message" id="otpError"></div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="submitButton">FARMER</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // OTP verification logic
+        const verifyButton = document.getElementById('verifyButton');
+        const otpField = document.getElementById('otp');
+        const submitButton = document.getElementById('submitButton');
+
+        verifyButton.addEventListener('click', () => {
+            // Perform OTP verification here
+            // Replace the following code with your actual OTP verification logic
+
+            // Simulating OTP verification delay
+            setTimeout(() => {
+                const randomOTP = Math.floor(1000 + Math.random() * 9000); // Generate a random OTP
+                otpField.value = randomOTP; // Set the OTP field value
+                submitButton.disabled = false; // Enable the submit button
+                document.getElementById('otpError').textContent = ''; // Clear OTP error message
+                document.getElementById('mobileError').textContent = ''; // Clear mobile number error message
+            }, 2000);
+        });
+
+        // Form validation logic
+        const loginForm = document.getElementById('loginForm');
+        const mobileNumberField = document.getElementById('user_id');
+        const mobileError = document.getElementById('mobileError');
+        const otpError = document.getElementById('otpError');
+
+        loginForm.addEventListener('submit', (e) => {
+            if (!validateMobileNumber()) {
+                e.preventDefault(); // Prevent form submission if validation fails
+            }
+        });
+
+        function validateMobileNumber() {
+            const user_id = mobileNumberField.value.trim();
+
+            if (user_id.length !== 10 || isNaN(user_id)) {
+                mobileError.textContent = 'Please enter a valid 10-digit mobile number';
+                return false;
+            }
+
+            mobileError.textContent = '';
+            return true;
+        }
+    </script>
+</body>
+</html>

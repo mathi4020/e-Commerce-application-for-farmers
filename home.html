@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+        
+        .sidebar {
+            height: 100%;
+            width: 85px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            white-space: nowrap;
+        }
+        
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+        
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        
+        .material-icons,
+        .icon-text {
+            vertical-align: middle;
+        }
+        
+        .material-icons {
+            padding-bottom: 3px;
+        }
+        
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+            margin-left: 100px;
+        }
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+            .sidebar a {
+                font-size: 18px;
+            }
+        }
+
+        body {
+    background:light green;
+    height: 100vh;
+}
+.wrapper span {
+    position: fixed;
+    bottom: -180px;
+    height: 50px;
+    width: 50px;
+    z-index: -1;
+    background-color:white;
+    box-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff, 0 0 200px #0072ff;
+    animation: animate 10s linear infinite;
+}
+.wrapper span:nth-child(1) {
+    left: 60px;
+    animation-delay: 0.6s;
+}
+.wrapper span:nth-child(2) {
+    left: 10%;
+    animation-delay: 3s;
+    width: 60px;
+    height: 60px;
+}
+.wrapper span:nth-child(3) {
+    left: 20%;
+    animation-delay: 2s;
+}
+.wrapper span:nth-child(4) {
+    left: 30%;
+    animation-delay: 5s;
+    width: 80px;
+    height: 80px;
+}
+.wrapper span:nth-child(5) {
+    left: 40%;
+    animation-delay: 1s;
+}
+.wrapper span:nth-child(6) {
+    left: 50%;
+    animation-delay: 7s;
+}
+.wrapper span:nth-child(7) {
+    left: 60%;
+    animation-delay: 6s;
+    width: 100px;
+    height: 100px;
+}
+.wrapper span:nth-child(8) {
+    left: 70%;
+    animation-delay: 8s;
+}
+.wrapper span:nth-child(9) {
+    left: 80%;
+    animation-delay: 6s;
+    width: 90px;
+    height: 90px;
+}
+.wrapper span:nth-child(10) {
+    left: 90%;
+    animation-delay: 4s;
+}
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.content h2 b {
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+    font-family: montserrat;
+    font-size: 80px;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+}
+.content p {
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    font-family: Times new roman;
+    font-size: 20px;
+    text-transform: none;
+    letter-spacing: 12px;
+}
+@keyframes animate {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    80% {
+        opacity: .7;
+    }
+    100% {
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+        <a href="home.html"><span><i class="material-icons">account_circle</i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Farmer</span></a><br>
+        <a href="farmer-login.html"><i class="material-icons">login</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;Farmer_login</a></span>
+        </a><br>
+        <a href="order_status.php"><i class="material-icons">monetization_on</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;Get_Orders</span></a><br>
+        <a href="home.html"><i class="material-icons">perm_identity</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;Marketer<span></a><br>
+          <a href="Marketer-login.html"><i class="material-icons">login</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;Marketer_login<span></a><br>
+            <a href="Marketer-crud.php"><i class="material-icons">search</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;Search_products<span></a><br>
+              <a href="status_reply.php"><i class="material-icons">shopping_cart</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;Buy_products<span></a><br>
+              
+    </div>
+
+    <div id="main">
+        <!-- <h2>Open/Collapse Sidebar on Hover</h2>
+        <p>Hover over any part of the sidebar to open the it.</p>
+        <p>To close the sidebar, move your mouse out of the sidebar.</p> -->
+    </div>
+
+    <div class="wrapper">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+</div>
+
+<div class="banner">
+    <div class="content">
+        <h2><b>AGROMART</b></h2>
+        <p>A Digital farming Solution!<p>
+    </div>
+</div>
+
+    <script>
+        var mini = true;
+
+        function toggleSidebar() {
+            if (mini) {
+                console.log("opening sidebar");
+                document.getElementById("mySidebar").style.width = "300px";
+                document.getElementById("main").style.marginLeft = "300px";
+                this.mini = false;
+            } else {
+                console.log("closing sidebar");
+                document.getElementById("mySidebar").style.width = "75px";
+                document.getElementById("main").style.marginLeft = "75px";
+                this.mini = true;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
